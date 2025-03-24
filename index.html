@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeaveCrafts - Handwoven Crafts & Traditional Artistry</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f5f2;
+            color: #3a3a3a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            color: #976d3b;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #3a3a3a;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #976d3b;
+        }
+        
+        .nav-btn {
+            background-color: #976d3b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        
+        .nav-btn:hover {
+            background-color: #7d5a2f;
+            color: white;
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1600x900/?weaving') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #976d3b;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #7d5a2f;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: #976d3b;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: #976d3b;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #976d3b;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: #fff9f0;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: #976d3b;
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #976d3b;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin: 0 auto 20px;
+        }
+        
+        .process-step h3 {
+            margin-bottom: 15px;
+            color: #976d3b;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: #fff9f0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(151, 109, 59, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial {
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-details h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .client-details p {
+            color: #666;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #fff9f0;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3, .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #976d3b;
+        }
+        
+        .contact-detail {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #976d3b;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #3a3a3a;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #976d3b;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: #976d3b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #7d5a2f;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #976d3b;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .process-step {
+                flex-basis: calc(50% - 20px);
+                margin-bottom: 30px;
+            }
+        }
+
+            .hero {
+            background-image: url("images/Weaving.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white; /* Ubah warna teks agar kontras */
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .product-img {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Membuat gambar selalu berbentuk persegi */
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            margin-left: 30px; /* Jarak antara menu dan bendera */
+            cursor: pointer; /* Menunjukkan bahwa ini bisa diklik */
+        }
+
+        .language-selector .flag {
+            width: 30px; /* Ukuran bendera */
+            height: auto; /* Menjaga rasio aspek */
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .process-step {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="WeaveCrafts Logo">
+                <h1 id="site-title">WeaveCrafts</h1>
+            </div>
+            <nav>
+                <ul>
+                    <div class="mobile-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <div class="language-selector" id="language-selector">
+                        <img src="images/flag-en.png" alt="English" class="flag" id="current-flag">
+                    </div>
+                    <li><a href="#home" id="nav-home">Home</a></li>
+                    <li><a href="#about" id="nav-about">About</a></li>
+                    <li><a href="#products" id="nav-products">Products</a></li>
+                    <li><a href="#process" id="nav-process">Process</a></li>
+                    <li><a href="#gallery" id="nav-gallery">Gallery</a></li>
+                    <li><a href="#contact" id="nav-contact">Contact</a></li>
+                    <li><a href="#shop" class="nav-btn" id="nav-shop">Shop Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2 id="hero-title">Traditional Handwoven Crafts</h2>
+            <p id="hero-description">Discover the beauty of handcrafted weaving arts, preserving cultural heritage through exquisite craftsmanship and sustainable materials.</p>
+            <a href="#products" class="btn" id="hero-button">Explore Our Collection</a>
+        </div>
+    </section>     
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="about-title">Our Story</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/logo.png" alt="Artisans working on traditional weaving">
+                </div>
+                <div class="about-text" id="about-text">
+                    <h3 id="about-subtitle">Preserving Handcraft Traditions</h3>
+                    <p id="about-paragraph-1">WeaveCrafts was established in 2010 with a mission to preserve and promote traditional weaving techniques that have been passed down through generations. Our artisans come from communities with rich cultural heritage in weaving crafts.</p>
+                    <p id="about-paragraph-2">Each piece is meticulously handcrafted using natural materials and traditional methods, ensuring that these time-honored skills continue to thrive in the modern world. We work directly with local artisans, providing fair wages and sustainable livelihoods while celebrating their exceptional artistic talents.</p>
+                    <p id="about-paragraph-3">Our commitment to quality, authenticity, and sustainability has made WeaveCrafts a trusted name in handwoven products. When you purchase from us, you're not just buying a beautiful handmade item – you're supporting cultural preservation and sustainable craftsmanship.</p>
+                    <a href="#" class="btn" id="about-button">Learn More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="products-title">Our Products</h2>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/Anyaman 1.jpg" alt="Woven Basket">
+                    </div>
+                    <div class="product-info">
+                        <h3 id="product-1-title">Traditional Woven Basket</h3>
+                        <p id="product-1-description">Handcrafted with natural rattan and palm leaves</p>
+                        <span class="product-price" id="product-1-price">$45.00</span>
+                        <a href="#" class="btn" id="product-1-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/Anyaman 2.jpg" alt="Wall Hanging">
+                    </div>
+                    <div class="product-info">
+                        <h3 id="product-2-title">Decorative Wall Hanging</h3>
+                        <p id="product-2-description">Intricate design woven with cotton and jute fibers</p>
+                        <span class="product-price" id="product-2-price">$65.00</span>
+                        <a href="#" class="btn" id="product-2-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/Anyaman 3.jpg" alt="Woven Bag">
+                    </div>
+                    <div class="product-info">
+                        <h3 id="product-3-title">Handwoven Tote Bag</h3>
+                        <p id="product-3-description">Durable and stylish, made from sustainable materials</p>
+                        <span class="product-price" id="product-3-price">$38.00</span>
+                        <a href="#" class="btn" id="product-3-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="images/Anyaman 4.jpg" alt="Table Runner">
+                    </div>
+                    <div class="product-info">
+                        <h3 id="product-4-title">Woven Table Runner</h3>
+                        <p id="product-4-description">Beautiful table decoration with traditional patterns</p>
+                        <span class="product-price" id="product-4-price">$52.00</span>
+                        <a href="#" class="btn" id="product-4-button">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn" id="view-all-products-button">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="process-title">Our Crafting Process</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon">1</div>
+                    <h3 id="step-1-title">Material Selection</h3>
+                    <p id="step-1-description">We carefully select sustainable natural materials like bamboo, rattan, palm leaves, and cotton from local sources.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">2</div>
+                    <h3 id="step-2-title">Material Preparation</h3>
+                    <p id="step-2-description">The materials are prepared by soaking, drying, and cutting to achieve the right texture and flexibility for weaving.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">3</div>
+                    <h3 id="step-3-title">Traditional Weaving</h3>
+                    <p id="step-3-description">Our skilled artisans weave each piece by hand using traditional techniques passed down through generations.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">4</div>
+                    <h3 id="step-4-title">Quality Finishing</h3>
+                    <p id="step-4-description">Each product is carefully finished and inspected to ensure it meets our high standards of quality and durability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="gallery-title">Gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/Process 1.png" alt="Weaving Process">
+                    <div class="gallery-overlay" id="gallery-item-1">Weaving Process</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Process 2.png" alt="Artisan at Work">
+                    <div class="gallery-overlay" id="gallery-item-2">Artisan at Work</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Process 3.png" alt="Finished Products">
+                    <div class="gallery-overlay" id="gallery-item-3">Finished Products</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Process 4.png" alt="Material Preparation">
+                    <div class="gallery-overlay" id="gallery-item-4">Material Preparation</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Process 5.png" alt="Workshop">
+                    <div class="gallery-overlay" id="gallery-item-5">Our Workshop</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Process 6.png" alt="Product Display">
+                    <div class="gallery-overlay" id="gallery-item-6">Product Display</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="testimonials-title">Customer Testimonials</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p class="testimonial-text" id="testimonial-text-1">"The quality of the handwoven basket I ordered exceeded my expectations. The craftsmanship is exquisite, and it's obvious that each piece is made with care and attention to detail. I'll definitely be ordering more items from WeaveCrafts!"</p>
+                    <div class="client-info">
+                        <div class="client-img">
+                            <img src="images/Logo.png" alt="Client">
+                        </div>
+                        <div class="client-details">
+                            <h4 id="client-name-1">Emily Johnson</h4>
+                            <p id="client-role-1">Interior Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- You can add more testimonials here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="contact-title">Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 id="contact-get-in-touch">Get In Touch</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 id="contact-address-title">Address</h4>
+                            <p id="contact-address">123 Craft Street, Artisan District, Weaverton, WV 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 id="contact-phone-title">Phone</h4>
+                            <p id="contact-phone">(123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 id="contact-email-title">Email</h4>
+                            <p id="contact-email">info@weavecrafts.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 id="contact-hours-title">Open Hours</h4>
+                            <p id="contact-hours">Monday - Friday: 9am - 5pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 id="contact-form-title">Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name" id="label-name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" id="label-email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" id="label-subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" id="label-message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="btn-send-message">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 id="footer-about-title">About WeaveCrafts</h3>
+                    <p id="footer-about-description">WeaveCrafts is dedicated to preserving traditional weaving crafts while providing sustainable livelihoods for skilled artisans. Each product tells a story of cultural heritage and exceptional craftsmanship.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 id="footer-quick-links-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home" id="footer-link-home">Home</a></li>
+                        <li><a href="#about" id="footer-link-about">About Us</a></li>
+                        <li><a href="#products" id="footer-link-products">Products</a></li>
+                        <li><a href="#process" id="footer-link-process">Our Process</a></li>
+                        <li><a href="#gallery" id="footer-link-gallery">Gallery</a></li>
+                        <li><a href="#contact" id="footer-link-contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 id="footer-customer-service-title">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" id="footer-link-shipping">Shipping & Returns</a></li>
+                        <li><a href="#" id="footer-link-faq">FAQ</a></li>
+                        <li><a href="#" id="footer-link-privacy">Privacy Policy</a></li>
+                        <li><a href="#" id="footer-link-terms">Terms & Conditions</a></li>
+                        <li><a href="#" id="footer-link-custom-orders">Custom Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 id="footer-newsletter-title">Newsletter</h3>
+                    <p id="footer-newsletter-description">Subscribe to receive updates on new products, special offers, and weaving stories.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="footer-rights">&copy; 2025 WeaveCrafts. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <!-- JavaScript for Language Switching -->
+    <script>
+        document.getElementById('language-selector').addEventListener('click', function() {
+        const currentFlag = document.getElementById('current-flag');
+        const lang = currentFlag.getAttribute('data-lang');
+
+    if (lang === 'en') {
+        // Switch to Bahasa Indonesia
+        currentFlag.src = 'images/flag-id.png'; // Change to Indonesian flag
+        currentFlag.setAttribute('data-lang', 'id');
+        
+        // Change text to Bahasa Indonesia
+        document.getElementById('site-title').innerText = 'WeaveCrafts';
+        document.getElementById('nav-home').innerText = 'Beranda';
+        document.getElementById('nav-about').innerText = 'Tentang';
+        document.getElementById('nav-products').innerText = 'Produk';
+        document.getElementById('nav-process').innerText = 'Proses';
+        document.getElementById('nav-gallery').innerText = 'Galeri';
+        document.getElementById('nav-contact').innerText = 'Kontak';
+        document.getElementById('nav-shop').innerText = 'Belanja Sekarang';
+        document.getElementById('hero-title').innerText = 'Kerajinan Tangan Tradisional';
+        document.getElementById('hero-description').innerText = 'Temukan keindahan seni tenun yang dibuat dengan tangan, melestarikan warisan budaya melalui kerajinan yang luar biasa dan bahan yang berkelanjutan.';
+        document.getElementById('hero-button').innerText = 'Jelajahi Koleksi Kami';
+        document.getElementById('about-title').innerText = 'Cerita Kami';
+        document.getElementById('about-subtitle').innerText = 'Melestarikan Tradisi Kerajinan Tangan';
+        document.getElementById('about-paragraph-1').innerText = 'WeaveCrafts didirikan pada tahun 2010 dengan misi untuk melestarikan dan mempromosikan teknik tenun tradisional yang telah diwariskan dari generasi ke generasi. Artis kami berasal dari komunitas dengan warisan budaya yang kaya dalam kerajinan tenun.';
+        document.getElementById('about-paragraph-2').innerText = 'Setiap karya dibuat dengan tangan secara teliti menggunakan bahan alami dan metode tradisional, memastikan bahwa keterampilan yang telah diwariskan ini terus berkembang di dunia modern. Kami bekerja langsung dengan pengrajin lokal, memberikan upah yang adil dan mata pencaharian yang berkelanjutan sambil merayakan bakat artistik mereka yang luar biasa.';
+        document.getElementById('about-paragraph-3').innerText = 'Komitmen kami terhadap kualitas, keaslian, dan keberlanjutan telah menjadikan WeaveCrafts nama yang terpercaya dalam produk tenun tangan. Ketika Anda membeli dari kami, Anda tidak hanya membeli barang handmade yang indah – Anda mendukung pelestarian budaya dan kerajinan yang berkelanjutan.';
+        document.getElementById('about-button').innerText = 'Pelajari Lebih Lanjut Tentang Kami';
+
+        // Products Section
+        document.getElementById('products-title').innerText = 'Produk Kami';
+        document.getElementById('product-1-title').innerText = 'Keranjang Tenun Tradisional';
+        document.getElementById('product-1-description').innerText = 'Dibuat dengan tangan menggunakan rotan alami dan daun palma';
+        document.getElementById('product-1-price').innerText = 'Rp 675.000';
+        document.getElementById('product-1-button').innerText = 'Tambahkan ke Keranjang';
+        document.getElementById('product-2-title').innerText = 'Hiasan Dinding Dekoratif';
+        document.getElementById('product-2-description').innerText = 'Desain rumit yang ditenun dengan serat kapas dan jute';
+        document.getElementById('product-2-price').innerText = 'Rp 975.000';
+        document.getElementById('product-2-button').innerText = 'Tambahkan ke Keranjang';
+        document.getElementById('product-3-title').innerText = 'Tas Tote Tenun Tangan';
+        document.getElementById('product-3-description').innerText = 'Tahan lama dan bergaya, terbuat dari bahan berkelanjutan';
+        document.getElementById('product-3-price').innerText = 'Rp 570.000';
+        document.getElementById('product-3-button').innerText = 'Tambahkan ke Keranjang';
+        document.getElementById('product-4-title').innerText = 'Pelindung Meja Tenun';
+        document.getElementById('product-4-description').innerText = 'Dekorasi meja yang indah dengan pola tradisional';
+        document.getElementById('product-4-price').innerText = 'Rp 780.000';
+        document.getElementById('product-4-button').innerText = 'Tambahkan ke Keranjang';
+        document.getElementById('view-all-products-button').innerText = 'Lihat Semua Produk';
+
+        // Process Section
+        document.getElementById('process-title').innerText = 'Proses Kerajinan Kami';
+        document.getElementById('step-1-title').innerText = 'Pemilihan Bahan';
+        document.getElementById('step-1-description').innerText = 'Kami dengan hati-hati memilih bahan alami yang berkelanjutan seperti bambu, rotan, daun palma, dan kapas dari sumber lokal.';
+        document.getElementById('step-2-title').innerText = 'Persiapan Bahan';
+        document.getElementById('step-2-description').innerText = 'Bahan-bahan disiapkan dengan merendam, mengeringkan, dan memotong untuk mencapai tekstur dan fleksibilitas yang tepat untuk ditenun.';
+        document.getElementById('step-3-title').innerText = 'Tenun Tradisional';
+        document.getElementById('step-3-description').innerText = 'Pengrajin kami yang terampil menenun setiap karya dengan tangan menggunakan teknik tradisional yang diwariskan dari generasi ke generasi.';
+        document.getElementById('step-4-title').innerText = 'Penyelesaian Berkualitas';
+        document.getElementById('step-4-description').innerText = 'Setiap produk diselesaikan dengan hati-hati dan diperiksa untuk memastikan memenuhi standar kualitas dan daya tahan yang tinggi.';
+
+        // Gallery Section
+        document.getElementById('gallery-title').innerText = 'Galeri';
+        document.getElementById('gallery-item-1').innerText = 'Proses Tenun';
+        document.getElementById('gallery-item-2').innerText = 'Pengrajin Sedang Bekerja';
+        document.getElementById('gallery-item-3').innerText = 'Produk Jadi';
+        document.getElementById('gallery-item-4').innerText = 'Persiapan Bahan';
+        document.getElementById('gallery-item-5').innerText = 'Workshop Kami';
+        document.getElementById('gallery-item-6').innerText = 'Tampilan Produk';
+
+        // Testimonials Section
+        document.getElementById('testimonials-title').innerText = 'Testimoni Pelanggan';
+        document.getElementById('testimonial-text-1').innerText = '"Kualitas keranjang tenun tangan yang saya pesan melebihi ekspektasi saya. Pengerjaannya sangat indah, dan jelas bahwa setiap bagiannya dibuat dengan hati-hati dan memperhatikan detail. Saya pasti akan memesan lebih banyak item dari WeaveCrafts!"';
+        document.getElementById('client-name-1').innerText = 'Emily Johnson';
+        document.getElementById('client-role-1').innerText = 'Desainer Interior';
+
+        // Contact Section
+        document.getElementById('contact-title').innerText = 'Hubungi Kami';
+        document.getElementById('contact-get-in-touch').innerText = 'Hubungi Kami';
+        document.getElementById('contact-address-title').innerText = 'Alamat';
+        document.getElementById('contact-address').innerText = '123 Craft Street, Artisan District, Weaverton, WV 12345';
+        document.getElementById('contact-phone-title').innerText = 'Telepon';
+        document.getElementById('contact-phone').innerText = '(123) 456-7890';
+        document.getElementById('contact-email-title').innerText = 'Email';
+        document.getElementById('contact-email').innerText = 'info@weavecrafts.com';
+        document.getElementById('contact-hours-title').innerText = 'Jam Buka';
+        document.getElementById('contact-hours').innerText = 'Senin - Jumat: 9am - 5pm\nSabtu: 10am - 4pm\nMinggu: Tutup';
+        document.getElementById('contact-form-title').innerText = 'Kirim Pesan kepada Kami';
+        document.getElementById('label-name').innerText = 'Nama Kamu';
+        document.getElementById('label-email').innerText = 'Email Kamu';
+        document.getElementById('label-subject').innerText = 'Subjek';
+        document.getElementById('label-message').innerText = 'Pesan Kamu';
+        document.getElementById('btn-send-message').innerText = 'Kirim Pesan';
+
+        // Footer Section
+        document.getElementById('footer-about-title').innerText = 'Tentang WeaveCrafts';
+        document.getElementById('footer-about-description').innerText = 'WeaveCrafts berdedikasi untuk melestarikan kerajinan tenun tradisional sambil memberikan mata pencaharian yang berkelanjutan bagi pengrajin terampil. Setiap produk menceritakan kisah warisan budaya dan kerajinan yang luar biasa.';
+        document.getElementById('footer-quick-links-title').innerText = 'Tautan Cepat';
+        document.getElementById('footer-link-home').innerText = 'Beranda';
+        document.getElementById('footer-link-about').innerText = 'Tentang Kami';
+        document.getElementById('footer-link-products').innerText = 'Produk';
+        document.getElementById('footer-link-process').innerText = 'Proses Kami';
+        document.getElementById('footer-link-gallery').innerText = 'Galeri';
+        document.getElementById('footer-link-contact').innerText = 'Kontak';
+        document.getElementById('footer-customer-service-title').innerText = 'Layanan Pelanggan';
+        document.getElementById('footer-link-shipping').innerText = 'Pengiriman & Pengembalian';
+        document.getElementById('footer-link-faq').innerText = 'FAQ';
+        document.getElementById('footer-link-privacy').innerText = 'Kebijakan Privasi';
+        document.getElementById('footer-link-terms').innerText = 'Syarat & Ketentuan';
+        document.getElementById('footer-link-custom-orders').innerText = 'Pesanan Khusus';
+        document.getElementById('footer-newsletter-title').innerText = 'Newsletter';
+        document.getElementById('footer-newsletter-description').innerText = 'Berlangganan untuk menerima pembaruan tentang produk baru, penawaran khusus, dan cerita tenun.';
+        document.getElementById('footer-rights').innerText = '© 2025 WeaveCrafts. Semua Hak Dilindungi.';
+    } else {
+        // Switch to English
+        currentFlag.src = 'images/flag-en.png'; // Change to English flag
+        currentFlag.setAttribute('data-lang', 'en');
+        
+        // Change text to English
+        document.getElementById('site-title').innerText = 'WeaveCrafts';
+        document.getElementById('nav-home').innerText = 'Home';
+        document.getElementById('nav-about').innerText = 'About';
+        document.getElementById('nav-products').innerText = 'Products';
+        document.getElementById('nav-process').innerText = 'Process';
+        document.getElementById('nav-gallery').innerText = 'Gallery';
+        document.getElementById('nav-contact').innerText = 'Contact';
+        document.getElementById('nav-shop').innerText = 'Shop Now';
+        document.getElementById('hero-title').innerText = 'Traditional Handwoven Crafts';
+        document.getElementById('hero-description').innerText = 'Discover the beauty of handcrafted weaving arts, preserving cultural heritage through exquisite craftsmanship and sustainable materials.';
+        document.getElementById('hero-button').innerText = 'Explore Our Collection';
+        document.getElementById('about-title').innerText = 'Our Story';
+        document.getElementById('about-subtitle').innerText = 'Preserving Handcraft Traditions';
+        document.getElementById('about-paragraph-1').innerText = 'WeaveCrafts was established in 2010 with a mission to preserve and promote traditional weaving techniques that have been passed down through generations. Our artisans come from communities with rich cultural heritage in weaving crafts.';
+        document.getElementById('about-paragraph-2').innerText = 'Each piece is meticulously handcrafted using natural materials and traditional methods, ensuring that these time-honored skills continue to thrive in the modern world. We work directly with local artisans, providing fair wages and sustainable livelihoods while celebrating their exceptional artistic talents.';
+        document.getElementById('about-paragraph-3').innerText = 'Our commitment to quality, authenticity, and sustainability has made WeaveCrafts a trusted name in handwoven products. When you purchase from us, you\'re not just buying a beautiful handmade item – you\'re supporting cultural preservation and sustainable craftsmanship.';
+        document.getElementById('about-button').innerText = 'Learn More About Us';
+
+        // Products Section
+        document.getElementById('products-title').innerText = 'Our Products';
+        document.getElementById('product-1-title').innerText = 'Traditional Woven Basket';
+        document.getElementById('product-1-description').innerText = 'Durable and stylish, made from sustainable materials';
+        document.getElementById('product-1-price').innerText = '$45.00';
+        document.getElementById('product-1-button').innerText = 'Add to Cart';
+        document.getElementById('product-2-title').innerText = 'Decorative Wall Hanging';
+        document.getElementById('product-2-description').innerText = 'Intricate design woven with cotton and jute fibers';
+        document.getElementById('product-2-price').innerText = '$65.00';
+        document.getElementById('product-2-button').innerText = 'Add to Cart';
+        document.getElementById('product-3-title').innerText = 'Handwoven Tote Bag';
+        document.getElementById('product-3-description').innerText = 'Durable and stylish, made from sustainable materials';
+        document.getElementById('product-3-price').innerText = '$38.00';
+        document.getElementById('product-3-button').innerText = 'Add to Cart';
+        document.getElementById('product-4-title').innerText = 'Woven Table Runner';
+        document.getElementById('product-4-description').innerText = 'Beautiful table decoration with traditional patterns';
+        document.getElementById('product-4-price').innerText = '$52.00';
+        document.getElementById('product-4-button').innerText = 'Add to Cart';
+        document.getElementById('view-all-products-button').innerText = 'View All Products';
+
+        // Process Section
+        document.getElementById('process-title').innerText = 'Our Crafting Process';
+        document.getElementById('step-1-title').innerText = 'Material Selection';
+        document.getElementById('step-1-description').innerText = 'We carefully select sustainable natural materials like bamboo, rattan, palm leaves, and cotton from local sources.';
+        document.getElementById('step-2-title').innerText = 'Material Preparation';
+        document.getElementById('step-2-description').innerText = 'The materials are prepared by soaking, drying, and cutting to achieve the right texture and flexibility for weaving.';
+        document.getElementById('step-3-title').innerText = 'Traditional Weaving';
+        document.getElementById('step-3-description').innerText = 'Our skilled artisans weave each piece by hand using traditional techniques passed down through generations.';
+        document.getElementById('step-4-title').innerText = 'Quality Finishing';
+        document.getElementById('step-4-description').innerText = 'Each product is carefully finished and inspected to ensure it meets our high standards of quality and durability.';
+
+        // Gallery Section
+        document.getElementById('gallery-title').innerText = 'Gallery';
+        document.getElementById('gallery-item-1').innerText = 'Weaving Process';
+        document.getElementById('gallery-item-2').innerText = 'Artisan at Work';
+        document.getElementById('gallery-item-3').innerText = 'Finished Products';
+        document.getElementById('gallery-item-4').innerText = 'Material Preparation';
+        document.getElementById('gallery-item-5').innerText = 'Our Workshop'
+        document.getElementById('gallery-item-6').innerText = 'Product Display'
+
+        // Testimonials Section
+        document.getElementById('testimonials-title').innerText = 'Customer Testimonials';
+        document.getElementById('testimonial-text-1').innerText = '"The quality of the handwoven basket I ordered exceeded my expectations. The craftsmanship is exquisite, and it\'s obvious that each piece is made with care and attention to detail. I\'ll definitely be ordering more items from WeaveCrafts!"';
+        document.getElementById('client-name-1').innerText = 'Emily Johnson';
+        document.getElementById('client-role-1').innerText = 'Interior Designer';
+
+        // Contact Section
+        document.getElementById('contact-title').innerText = 'Contact Us';
+        document.getElementById('contact-get-in-touch').innerText = 'Get In Touch';
+        document.getElementById('contact-address-title').innerText = 'Address';
+        document.getElementById('contact-address').innerText = '123 Craft Street, Artisan District, Weaverton, WV 12345';
+        document.getElementById('contact-phone-title').innerText = 'Phone';
+        document.getElementById('contact-phone').innerText = '(123) 456-7890';
+        document.getElementById('contact-email-title').innerText = 'Email';
+        document.getElementById('contact-email').innerText = 'info@weavecrafts.com';
+        document.getElementById('contact-hours-title').innerText = 'Open Hours';
+        document.getElementById('contact-hours').innerText = 'Monday - Friday: 9am - 5pm\nSaturday: 10am - 4pm\nSunday: Closed';
+        document.getElementById('contact-form-title').innerText = 'Send Us a Message';
+        document.getElementById('label-name').innerText = 'Your Name';
+        document.getElementById('label-email').innerText = 'Your Email';
+        document.getElementById('label-subject').innerText = 'Subject';
+        document.getElementById('label-message').innerText = 'Your Message';
+        document.getElementById('btn-send-message').innerText = 'Send Message';
+
+        // Footer Section
+        document.getElementById('footer-about-title').innerText = 'About WeaveCrafts';
+        document.getElementById('footer-about-description').innerText = 'WeaveCrafts berdedikasi untuk melestarikan kerajinan tenun tradisional sambil memberikan mata pencaharian yang berkelanjutan bagi pengrajin terampil. Setiap produk menceritakan kisah warisan budaya dan kerajinan yang luar biasa.';
+        document.getElementById('footer-quick-links-title').innerText = 'Quick Links';
+        document.getElementById('footer-link-home').innerText = 'Home';
+        document.getElementById('footer-link-about').innerText = 'About Us';
+        document.getElementById('footer-link-products').innerText = 'Products';
+        document.getElementById('footer-link-process').innerText = 'Our Process';
+        document.getElementById('footer-link-gallery').innerText = 'Gallery';
+        document.getElementById('footer-link-contact').innerText = 'Contact';
+        document.getElementById('footer-customer-service-title').innerText = 'Customer Service';
+        document.getElementById('footer-link-shipping').innerText = 'Shipping & Returns';
+        document.getElementById('footer-link-faq').innerText = 'FAQ';
+        document.getElementById('footer-link-privacy').innerText = 'Privacy Policy';
+        document.getElementById('footer-link-terms').innerText = 'Terms & Conditions';
+        document.getElementById('footer-link-custom-orders').innerText = 'Custom Orders';
+        document.getElementById('footer-newsletter-title').innerText = 'Newsletter';
+        document.getElementById('footer-newsletter-description').innerText = 'Subscribe to receive updates on new products, special offers, and weaving stories';
+        document.getElementById('footer-rights').innerText = '© 2025 WeaveCrafts. All Rights Reserved.';
+    }
+});
+</script>
+</body>
+</html>
