@@ -934,8 +934,9 @@
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
+             <div class="footer-bottom">
                 <p id="footer-rights">&copy; 2025 Handmade Woven Bag Mba' Ratna. All Rights Reserved.</p>
+                <a href="admin.html" style="color: #666; margin-left: 10px; font-size: 0.9em;">Admin</a>
             </div>
         </div>
     </footer>
@@ -1167,4 +1168,66 @@
 });
 </script>
 </body>
+<script>
+    // Function to load products from localStorage
+    function loadProducts() {
+        const storedProducts = localStorage.getItem('mbaRatnaProducts');
+        if (storedProducts) {
+            const products = JSON.parse(storedProducts);
+            const productGrid = document.querySelector('.product-grid');
+            
+            // Clear existing product cards
+            productGrid.innerHTML = '';
+            
+            // Add products from storage
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-img">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <span class="product-price">${product.price}</span>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                `;
+                productGrid.appendChild(productCard);
+            });
+        }
+    }
+
+    // Load products when the page loads
+    window.addEventListener('DOMContentLoaded', loadProducts);
+</script>
+<script>
+    // Function to load blog posts from localStorage
+    function loadBlogs() {
+        const storedBlogs = localStorage.getItem('mbaRatnaBlogs');
+        if (storedBlogs) {
+            const blogs = JSON.parse(storedBlogs);
+            const processSteps = document.querySelector('.process-steps');
+            
+            // Clear existing blog posts
+            processSteps.innerHTML = '';
+            
+            // Add blogs from storage
+            blogs.forEach((blog, index) => {
+                const blogPost = document.createElement('div');
+                blogPost.className = 'process-step';
+                blogPost.innerHTML = `
+                    <div class="step-icon">${index + 1}</div>
+                    <h3>${blog.title}</h3>
+                    <p>${blog.content}</p>
+                `;
+                processSteps.appendChild(blogPost);
+            });
+        }
+    }
+
+    // Load blog posts when the page loads
+    window.addEventListener('DOMContentLoaded', loadBlogs);
+</script>
 </html>
