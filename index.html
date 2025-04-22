@@ -57,6 +57,11 @@
             font-weight: 700;
         }
         
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -92,12 +97,38 @@
         .mobile-menu {
             display: none;
             cursor: pointer;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav ul {
+            display: block;
+            padding: 20px;
+        }
+
+        .mobile-nav ul li {
+            margin: 15px 0;
         }
         
         /* Hero Section */
         .hero {
             padding: 80px 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1600x900/?weaving') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Weaving.png') no-repeat center center/cover;
             color: white;
             text-align: center;
         }
@@ -216,6 +247,8 @@
         .product-img {
             height: 250px;
             overflow: hidden;
+            width: 100%;
+            aspect-ratio: 1 / 1;
         }
         
         .product-img img {
@@ -541,6 +574,19 @@
             border-top: 1px solid #555;
         }
         
+        /* Language Selector */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+
+        .language-selector .flag {
+            width: 30px;
+            height: auto;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 991px) {
             .about-content {
@@ -551,44 +597,14 @@
                 flex-basis: calc(50% - 20px);
                 margin-bottom: 30px;
             }
-        }
-
-            .hero {
-            background-image: url("images/Weaving.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white; /* Ubah warna teks agar kontras */
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .product-img {
-            width: 100%;
-            aspect-ratio: 1 / 1; /* Membuat gambar selalu berbentuk persegi */
-            overflow: hidden;
-        }
-
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .language-selector {
-            display: flex;
-            align-items: center;
-            margin-left: 30px; /* Jarak antara menu dan bendera */
-            cursor: pointer; /* Menunjukkan bahwa ini bisa diklik */
-        }
-
-        .language-selector .flag {
-            width: 30px; /* Ukuran bendera */
-            height: auto; /* Menjaga rasio aspek */
+            
+            .logo h1 {
+                font-size: 20px;
+            }
         }
 
         @media (max-width: 768px) {
-            nav ul {
+            .desktop-nav {
                 display: none;
             }
             
@@ -607,6 +623,64 @@
             .process-step {
                 flex-basis: 100%;
             }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            .logo {
+                flex: 1;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 20px;
+                justify-content: flex-end;
+            }
+            
+            .language-selector {
+                margin-left: auto;
+                margin-right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 24px;
+            }
+            
+            .about-text h3 {
+                font-size: 20px;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .footer-column {
+                min-width: 100%;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -619,14 +693,14 @@
                 <img src="images/Logo.png" alt="Handmade Woven Bag Mba' Ratna Logo">
                 <h1 id="site-title">Handmade Woven Bag Mba' Ratna</h1>
             </div>
-            <nav>
+            <div class="mobile-menu" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="language-selector" id="language-selector">
+                <img src="images/flag-en.png" alt="English" class="flag" id="current-flag" data-lang="en">
+            </div>
+            <nav class="desktop-nav">
                 <ul>
-                    <div class="mobile-menu">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                    <div class="language-selector" id="language-selector">
-                        <img src="images/flag-en.png" alt="English" class="flag" id="current-flag">
-                    </div>
                     <li><a href="#home" id="nav-home">Home</a></li>
                     <li><a href="#about" id="nav-about">About</a></li>
                     <li><a href="#products" id="nav-products">Catalog</a></li>
@@ -636,6 +710,18 @@
                     <li><a href="#shop" class="nav-btn" id="nav-shop">Shop Now</a></li>
                 </ul>
             </nav>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobile-nav">
+            <ul>
+                <li><a href="#home" id="mobile-nav-home">Home</a></li>
+                <li><a href="#about" id="mobile-nav-about">About</a></li>
+                <li><a href="#products" id="mobile-nav-products">Catalog</a></li>
+                <li><a href="#process" id="mobile-nav-process">Blogs</a></li>
+                <li><a href="#gallery" id="mobile-nav-gallery">Gallery</a></li>
+                <li><a href="#contact" id="mobile-nav-contact">Contact</a></li>
+                <li><a href="#shop" class="nav-btn" id="mobile-nav-shop">Shop Now</a></li>
+            </ul>
         </div>
     </header>
 
@@ -660,7 +746,7 @@
                 </div>
                 <div class="about-text" id="about-text">
                     <h3 id="about-subtitle">Preserving Handcraft Traditions</h3>
-                    <p id="about-paragraph-1">Mba’ Ratna woven craft bag was founded in 2020 by Dwi Ratnasari. With a mission to preserve and promote traditional simple weaving techniques that have been passed down from generation to generation.</p>
+                    <p id="about-paragraph-1">Mba' Ratna woven craft bag was founded in 2020 by Dwi Ratnasari. With a mission to preserve and promote traditional simple weaving techniques that have been passed down from generation to generation.</p>
                     <p id="about-paragraph-2">The resulting woven bags are carefully made using traditional weaving methods. This can preserve traditional skills that have been passed down and will continue to develop in the modern world. Working directly with local craftsmen as a sustainable livelihood by providing decent wages as a form of appreciating the artistic talents of the extraordinary craftsmen.</p>
                     <p id="about-paragraph-3">Our commitment to the results of quality, authenticity, and sustainability makes this woven bag UMKM generate trust and customer satisfaction. Currently buying our woven bag products, you are not only buying traditional goods from beautiful hands but also supporting the preservation of sustainable traditional culture and handicrafts.</p>
                     <a href="#" class="btn" id="about-button">Learn More About Us</a>
@@ -816,7 +902,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
