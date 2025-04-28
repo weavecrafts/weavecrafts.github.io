@@ -1330,4 +1330,53 @@
     // Load blog posts when the page loads
     window.addEventListener('DOMContentLoaded', loadBlogs);
 </script>
+    <!-- Add this JavaScript code at the end of your body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle functionality
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+                
+                // Change hamburger icon to X when menu is open
+                const icon = mobileMenuToggle.querySelector('i');
+                if (mobileNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileNavLinks = document.querySelectorAll('#mobile-nav a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('active');
+                    
+                    // Reset hamburger icon
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+            
+            // Optional: Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileNav.contains(event.target) && 
+                    !mobileMenuToggle.contains(event.target) && 
+                    mobileNav.classList.contains('active')) {
+                    mobileNav.classList.remove('active');
+                    
+                    // Reset hamburger icon
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
 </html>
