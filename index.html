@@ -920,7 +920,7 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/Process 1.png" alt="Weaving blog">
-                    <div class="gallery-overlay" id="gallery-item-1">Weaving blog</div>
+                    <div class="gallery-overlay" id="gallery-item-1">Weaving Blog</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/Process 2.png" alt="Artisan at Work">
@@ -928,7 +928,7 @@
                 </div>
                 <div class="gallery-item">
                     <img src="images/Process 3.png" alt="Finished catalogs">
-                    <div class="gallery-overlay" id="gallery-item-3">Finished catalogs</div>
+                    <div class="gallery-overlay" id="gallery-item-3">Finished Catalogs</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/Process 4.png" alt="Material Preparation">
@@ -1140,228 +1140,270 @@
 
     <!-- JavaScript for Language Switching -->
     <script>
-        document.getElementById('language-selector').addEventListener('click', function() {
-        const currentFlag = document.getElementById('current-flag');
-        const lang = currentFlag.getAttribute('data-lang');
+// JavaScript for Language Switching
+document.addEventListener('DOMContentLoaded', function() {
+    // Pastikan elemen language-selector ada sebelum menambahkan event listener
+    const languageSelector = document.getElementById('language-selector');
+    
+    if (languageSelector) {
+        languageSelector.addEventListener('click', function() {
+            const currentFlag = document.getElementById('current-flag');
+            
+            // Pastikan elemen current-flag ada
+            if (!currentFlag) {
+                console.error('Element with ID "current-flag" not found');
+                return;
+            }
+            
+            const lang = currentFlag.getAttribute('data-lang');
 
-    if (lang === 'en') {
-        // Switch to Bahasa Indonesia
-        currentFlag.src = 'images/flag-id.png'; // Change to Indonesian flag
-        currentFlag.setAttribute('data-lang', 'id');
-        
-        // Change text to Bahasa Indonesia
-        document.getElementById('site-title').innerText = 'Tas Anyaman Mba Ratna';
-        document.getElementById('nav-home').innerText = 'Beranda';
-        document.getElementById('nav-catalogs').innerText = 'Katalog';
-        document.getElementById('nav-gallery').innerText = 'Galeri';
-        document.getElementById('nav-testimonials').innerText = 'Testimoni';
-        document.getElementById('nav-blog').innerText = 'Blog';
-        document.getElementById('nav-contact').innerText = 'Kontak';
-        document.getElementById('nav-shop').innerText = 'Belanja Sekarang';
-        document.getElementById('hero-title').innerText = 'Kerajinan Tangan Tradisional';
-        document.getElementById('hero-description').innerText = 'Kerajinan tas anyaman Mba Ratna menawarkan tas kerajinan dengan kualitas terbaik dan menarik bagi semua pelanggan. Cari dan temukan tas pilihan Anda!';
-        document.getElementById('hero-button').innerText = 'Jelajahi Koleksi Kami';
-        document.getElementById('about-title').innerText = 'Cerita Kami';
-        document.getElementById('about-subtitle').innerText = 'Melestarikan Tradisi Kerajinan Tangan';
-        document.getElementById('about-paragraph-1').innerText = 'Tas anyaman Mba Ratna didirikan pada tahun 2020 oleh Dwi Ratnasari. Dengan misi melestarikan dan memajukan teknik tenun tradisional sederhana yang telah diwariskan dari generasi ke generasi.';
-        document.getElementById('about-paragraph-2').innerText = 'Tas anyaman yang dihasilkan dibuat dengan cermat menggunakan metode tenun tradisional. Hal ini dapat melestarikan keterampilan tradisional yang telah diwariskan dan akan terus berkembang di dunia modern. Bekerja sama langsung dengan perajin lokal sebagai mata pencaharian yang berkelanjutan dengan memberikan upah yang layak sebagai bentuk apresiasi terhadap bakat seni para perajin yang luar biasa.';
-        document.getElementById('about-paragraph-3').innerText = 'Komitmen kami terhadap hasil yang berkualitas, autentik, dan berkelanjutan membuat UMKM tas anyaman ini menghasilkan kepercayaan dan kepuasan pelanggan. Saat ini dengan membeli produk tas anyaman kami, Anda tidak hanya membeli barang tradisional dari tangan-tangan cantik tetapi juga mendukung pelestarian budaya dan kerajinan tradisional yang berkelanjutan.';
-        document.getElementById('about-button').innerText = 'Pelajari Lebih Lanjut Tentang Kami';
+            if (lang === 'en') {
+                // Switch to Bahasa Indonesia
+                currentFlag.src = 'images/flag-id.png'; // Change to Indonesian flag
+                currentFlag.setAttribute('data-lang', 'id');
+                
+                // Change text to Bahasa Indonesia - Bagian Navigasi dan Hero
+                changeElementText('site-title', 'Tas Anyaman Mba Ratna');
+                changeElementText('nav-home', 'Beranda');
+                changeElementText('nav-catalogs', 'Katalog');
+                changeElementText('nav-gallery', 'Galeri');
+                changeElementText('nav-testimonials', 'Testimoni');
+                changeElementText('nav-blog', 'Blog');
+                changeElementText('nav-contact', 'Kontak');
+                changeElementText('nav-shop', 'Belanja Sekarang');
+                changeElementText('hero-title', 'Kerajinan Tangan Tradisional');
+                changeElementText('hero-description', 'Kerajinan tas anyaman Mba Ratna menawarkan tas kerajinan dengan kualitas terbaik dan menarik bagi semua pelanggan. Cari dan temukan tas pilihan Anda!');
+                changeElementText('hero-button', 'Jelajahi Koleksi Kami');
+                
+                // About Section
+                changeElementText('about-title', 'Cerita Kami');
+                changeElementText('about-subtitle', 'Melestarikan Tradisi Kerajinan Tangan');
+                changeElementText('about-paragraph-1', 'Tas anyaman Mba Ratna didirikan pada tahun 2020 oleh Dwi Ratnasari. Dengan misi melestarikan dan memajukan teknik tenun tradisional sederhana yang telah diwariskan dari generasi ke generasi.');
+                changeElementText('about-paragraph-2', 'Tas anyaman yang dihasilkan dibuat dengan cermat menggunakan metode tenun tradisional. Hal ini dapat melestarikan keterampilan tradisional yang telah diwariskan dan akan terus berkembang di dunia modern. Bekerja sama langsung dengan perajin lokal sebagai mata pencaharian yang berkelanjutan dengan memberikan upah yang layak sebagai bentuk apresiasi terhadap bakat seni para perajin yang luar biasa.');
+                changeElementText('about-paragraph-3', 'Komitmen kami terhadap hasil yang berkualitas, autentik, dan berkelanjutan membuat UMKM tas anyaman ini menghasilkan kepercayaan dan kepuasan pelanggan. Saat ini dengan membeli produk tas anyaman kami, Anda tidak hanya membeli barang tradisional dari tangan-tangan cantik tetapi juga mendukung pelestarian budaya dan kerajinan tradisional yang berkelanjutan.');
+                changeElementText('about-button', 'Pelajari Lebih Lanjut Tentang Kami');
 
-        // Catalogs Section
-        document.getElementById('catalogs-title').innerText = 'Katalog';
-        document.getElementById('catalogs-1-title').innerText = 'Keranjang Tenun Tradisional';
-        document.getElementById('catalogs-1-description').innerText = 'Dibuat dengan tangan menggunakan rotan alami dan daun palma';
-        document.getElementById('catalogs-1-price').innerText = 'Rp 675.000';
-        document.getElementById('catalogs-1-button').innerText = 'Tambahkan ke Keranjang';
-        document.getElementById('catalogs-2-title').innerText = 'Hiasan Dinding Dekoratif';
-        document.getElementById('catalogs-2-description').innerText = 'Desain rumit yang ditenun dengan serat kapas dan jute';
-        document.getElementById('catalogs-2-price').innerText = 'Rp 975.000';
-        document.getElementById('catalogs-2-button').innerText = 'Tambahkan ke Keranjang';
-        document.getElementById('catalogs-3-title').innerText = 'Tas Tote Tenun Tangan';
-        document.getElementById('catalogs-3-description').innerText = 'Tahan lama dan bergaya, terbuat dari bahan berkelanjutan';
-        document.getElementById('catalogs-3-price').innerText = 'Rp 570.000';
-        document.getElementById('catalogs-3-button').innerText = 'Tambahkan ke Keranjang';
-        document.getElementById('catalogs-4-title').innerText = 'Pelindung Meja Tenun';
-        document.getElementById('catalogs-4-description').innerText = 'Dekorasi meja yang indah dengan pola tradisional';
-        document.getElementById('catalogs-4-price').innerText = 'Rp 780.000';
-        document.getElementById('catalogs-4-button').innerText = 'Tambahkan ke Keranjang';
-        document.getElementById('view-all-catalogs-button').innerText = 'Lihat Semua Produk';
+                // Catalogs Section
+                changeElementText('catalogs-title', 'Katalog');
+                changeElementText('catalogs-1-title', 'Keranjang Tenun Tradisional');
+                changeElementText('catalogs-1-description', 'Dibuat dengan tangan menggunakan rotan alami dan daun palma');
+                changeElementText('catalogs-1-price', 'Rp 675.000');
+                changeElementText('catalogs-1-button', 'Tambahkan ke Keranjang');
+                changeElementText('catalogs-2-title', 'Hiasan Dinding Dekoratif');
+                changeElementText('catalogs-2-description', 'Desain rumit yang ditenun dengan serat kapas dan jute');
+                changeElementText('catalogs-2-price', 'Rp 975.000');
+                changeElementText('catalogs-2-button', 'Tambahkan ke Keranjang');
+                changeElementText('catalogs-3-title', 'Tas Tote Tenun Tangan');
+                changeElementText('catalogs-3-description', 'Tahan lama dan bergaya, terbuat dari bahan berkelanjutan');
+                changeElementText('catalogs-3-price', 'Rp 570.000');
+                changeElementText('catalogs-3-button', 'Tambahkan ke Keranjang');
+                changeElementText('catalogs-4-title', 'Pelindung Meja Tenun');
+                changeElementText('catalogs-4-description', 'Dekorasi meja yang indah dengan pola tradisional');
+                changeElementText('catalogs-4-price', 'Rp 780.000');
+                changeElementText('catalogs-4-button', 'Tambahkan ke Keranjang');
+                changeElementText('view-all-catalogs-button', 'Lihat Semua Produk');
 
-        // blog Section
-        document.getElementById('blog-title').innerText = 'Cara Merawat Tas Tenun: 4 Tips Penting';
-        document.getElementById('step-1-title').innerText = 'Bersihkan dengan Kain, Jangan Dicuci';
-        document.getElementById('step-1-description').innerText = 'Hindari mencuci tas tenun langsung dengan air. Sebaliknya, gunakan kain yang sedikit dibasahi untuk menyeka kotoran. Untuk noda membandel, gosok perlahan dengan sikat gigi berbulu lembut agar permukaan dan motif tas tetap terjaga.';
-        document.getElementById('step-2-title').innerText = 'Hilangkan Bau dengan Baking Soda';
-        document.getElementById('step-2-description').innerText = 'Untuk tas yang mengeluarkan bau tak sedap setelah disimpan, masukkan baking soda ke dalam tas dan biarkan selama 24 jam. Penghilang bau alami ini menghilangkan bau tanpa merusak bahan, tidak seperti parfum yang dapat merusak serat.';
-        document.getElementById('step-3-title').innerText = 'Lindungi dari Air';
-        document.getElementById('step-3-description').innerText = 'Air merupakan musuh bahan tenun karena dapat menyebabkan tumbuhnya jamur. Jika tas Anda basah, segera keringkan dengan mengelapnya secara menyeluruh menggunakan kain bersih, lalu simpan di tempat yang kering untuk mencegah kerusakan baik pada tampilan maupun strukturnya.';
-        document.getElementById('step-4-title').innerText = 'Lakukan Perawatan Rutin';
-        document.getElementById('step-4-description').innerText = 'Periksa tas tenun Anda secara rutin untuk mengetahui tanda-tanda kerusakan atau penumpukan kotoran. Deteksi dini memungkinkan perbaikan dan pembersihan segera, memperpanjang umur tas Anda secara signifikan dan menjaga daya tarik estetikanya.';
+                // Blog Section
+                changeElementText('blog-title', 'Cara Merawat Tas Tenun: 4 Tips Penting');
+                changeElementText('step-1-title', 'Bersihkan dengan Kain, Jangan Dicuci');
+                changeElementText('step-1-description', 'Hindari mencuci tas tenun langsung dengan air. Sebaliknya, gunakan kain yang sedikit dibasahi untuk menyeka kotoran. Untuk noda membandel, gosok perlahan dengan sikat gigi berbulu lembut agar permukaan dan motif tas tetap terjaga.');
+                changeElementText('step-2-title', 'Hilangkan Bau dengan Baking Soda');
+                changeElementText('step-2-description', 'Untuk tas yang mengeluarkan bau tak sedap setelah disimpan, masukkan baking soda ke dalam tas dan biarkan selama 24 jam. Penghilang bau alami ini menghilangkan bau tanpa merusak bahan, tidak seperti parfum yang dapat merusak serat.');
+                changeElementText('step-3-title', 'Lindungi dari Air');
+                changeElementText('step-3-description', 'Air merupakan musuh bahan tenun karena dapat menyebabkan tumbuhnya jamur. Jika tas Anda basah, segera keringkan dengan mengelapnya secara menyeluruh menggunakan kain bersih, lalu simpan di tempat yang kering untuk mencegah kerusakan baik pada tampilan maupun strukturnya.');
+                changeElementText('step-4-title', 'Lakukan Perawatan Rutin');
+                changeElementText('step-4-description', 'Periksa tas tenun Anda secara rutin untuk mengetahui tanda-tanda kerusakan atau penumpukan kotoran. Deteksi dini memungkinkan perbaikan dan pembersihan segera, memperpanjang umur tas Anda secara signifikan dan menjaga daya tarik estetikanya.');
 
-        // Gallery Section
-        document.getElementById('gallery-title').innerText = 'Galeri';
-        document.getElementById('gallery-item-1').innerText = 'Proses Tenun';
-        document.getElementById('gallery-item-2').innerText = 'Pengrajin Sedang Bekerja';
-        document.getElementById('gallery-item-3').innerText = 'Produk Jadi';
-        document.getElementById('gallery-item-4').innerText = 'Persiapan Bahan';
-        document.getElementById('gallery-item-5').innerText = 'Workshop Kami';
-        document.getElementById('gallery-item-6').innerText = 'Tampilan Produk';
+                // Gallery Section
+                changeElementText('gallery-title', 'Galeri');
+                changeElementText('gallery-item-1', 'Proses Tenun');
+                changeElementText('gallery-item-2', 'Pengrajin Sedang Bekerja');
+                changeElementText('gallery-item-3', 'Produk Jadi');
+                changeElementText('gallery-item-4', 'Persiapan Bahan');
+                changeElementText('gallery-item-5', 'Workshop Kami');
+                changeElementText('gallery-item-6', 'Tampilan Produk');
 
-        // testimonials Section
-        document.getElementById('testimonials-title').innerText = 'Testimoni Pelanggan';
-        document.getElementById('testimonials-text-1').innerText = 'Kualitas keranjang tenun tangan yang saya pesan melebihi ekspektasi saya. Pengerjaannya sangat indah, dan jelas bahwa setiap bagiannya dibuat dengan hati-hati dan memperhatikan detail. Saya pasti akan memesan lebih banyak item dari Tas Anyaman Mba Ratna!';
-        document.getElementById('client-name-1').innerText = 'Emily Johnson';
-        document.getElementById('client-role-1').innerText = 'Desainer Interior';
+                // Testimonials Section
+                changeElementText('testimonials-title', 'Testimoni Pelanggan');
+                changeElementText('testimonials-text-1', 'Kualitas keranjang tenun tangan yang saya pesan melebihi ekspektasi saya. Pengerjaannya sangat indah, dan jelas bahwa setiap bagiannya dibuat dengan hati-hati dan memperhatikan detail. Saya pasti akan memesan lebih banyak item dari Tas Anyaman Mba Ratna!');
+                changeElementText('client-name-1', 'Emily Johnson');
+                changeElementText('client-role-1', 'Desainer Interior');
 
-        // Contact Section
-        document.getElementById('contact-title').innerText = 'Hubungi Kami';
-        document.getElementById('contact-get-in-touch').innerText = 'Hubungi Kami';
-        document.getElementById('contact-address-title').innerText = 'Alamat';
-        document.getElementById('contact-address').innerHTML = 'Depan KUD Sri Among Tani, No. 97<br>Brenggolo, Plosoklaten, Kabupaten Kediri<br>Jawa Timur 64175';
-        document.getElementById('contact-phone-title').innerText = 'Telepon';
-        document.getElementById('contact-phone').innerText = '(62) 856-0898-0005';
-        document.getElementById('contact-tiktok-title').innerText = 'TikTok';
-        document.getElementById('contact-tiktok').innerText = '@tas_anyaman mba ratna';
-        document.getElementById('contact-instagram-title').innerText = 'TikTok';
-        document.getElementById('contact-instagram').innerText = '@mba_ratnas_woven_bag';
-        document.getElementById('contact-hours-title').innerText = 'Jam Buka';
-        document.getElementById('contact-hours').innerHTML = 'Senin - Jumat: 9am - 5pm<br>Sabtu: 10am - 4pm<br>Minggu: Tutup';
-        document.getElementById('contact-form-title').innerText = 'Kirim Pesan kepada Kami';
-        document.getElementById('label-name').innerText = 'Nama Kamu';
-        document.getElementById('label-email').innerText = 'Email Kamu';
-        document.getElementById('label-subject').innerText = 'Subjek';
-        document.getElementById('label-message').innerText = 'Pesan Kamu';
-        document.getElementById('btn-send-message').innerText = 'Kirim Pesan';
+                // Contact Section
+                changeElementText('contact-title', 'Hubungi Kami');
+                changeElementText('contact-get-in-touch', 'Hubungi Kami');
+                changeElementText('contact-address-title', 'Alamat');
+                changeElementHTML('contact-address', 'Depan KUD Sri Among Tani, No. 97<br>Brenggolo, Plosoklaten, Kabupaten Kediri<br>Jawa Timur 64175');
+                changeElementText('contact-phone-title', 'Telepon');
+                changeElementText('contact-phone', '(62) 856-0898-0005');
+                changeElementText('contact-tiktok-title', 'TikTok');
+                changeElementText('contact-tiktok', '@tas_anyaman mba ratna');
+                changeElementText('contact-instagram-title', 'Instagram');
+                changeElementText('contact-instagram', '@mba_ratnas_woven_bag');
+                changeElementText('contact-hours-title', 'Jam Buka');
+                changeElementHTML('contact-hours', 'Senin - Jumat: 9am - 5pm<br>Sabtu: 10am - 4pm<br>Minggu: Tutup');
+                changeElementText('contact-form-title', 'Kirim Pesan kepada Kami');
+                changeElementText('label-name', 'Nama Kamu');
+                changeElementText('label-email', 'Email Kamu');
+                changeElementText('label-subject', 'Subjek');
+                changeElementText('label-message', 'Pesan Kamu');
+                changeElementText('btn-send-message', 'Kirim Pesan');
 
-        // Footer Section
-        document.getElementById('footer-about-title').innerText = 'Tentang Tas Anyaman Mba Ratna';
-        document.getElementById('footer-about-description').innerText = 'Tas Anyaman Mba Ratna berdedikasi untuk melestarikan kerajinan tenun tradisional sambil memberikan mata pencaharian yang berkelanjutan bagi pengrajin terampil. Setiap produk menceritakan kisah warisan budaya dan kerajinan yang luar biasa.';
-        document.getElementById('footer-quick-links-title').innerText = 'Tautan Cepat';
-        document.getElementById('footer-link-home').innerText = 'Beranda';
-        document.getElementById('footer-link-catalogs').innerText = 'Katalog';
-        document.getElementById('footer-link-gallery').innerText = 'Galeri';
-        document.getElementById('footer-link-testimonials').innerText = 'Testimoni';
-        document.getElementById('footer-link-blog').innerText = 'Blog';
-        document.getElementById('footer-link-contact').innerText = 'Kontak';
-        document.getElementById('footer-customer-service-title').innerText = 'Layanan Pelanggan';
-        document.getElementById('footer-link-shipping').innerText = 'Pengiriman & Pengembalian';
-        document.getElementById('footer-link-faq').innerText = 'FAQ';
-        document.getElementById('footer-link-privacy').innerText = 'Kebijakan Privasi';
-        document.getElementById('footer-link-terms').innerText = 'Syarat & Ketentuan';
-        document.getElementById('footer-link-custom-orders').innerText = 'Pesanan Khusus';
-        document.getElementById('footer-newsletter-title').innerText = 'Newsletter';
-        document.getElementById('footer-newsletter-description').innerText = 'Berlangganan untuk menerima pembaruan tentang produk baru, penawaran khusus, dan cerita tenun.';
-        document.getElementById('footer-rights').innerText = '© 2025 Tas Anyaman Mba Ratna. Semua Hak Dilindungi.';
+                // Footer Section
+                changeElementText('footer-about-title', 'Tentang Tas Anyaman Mba Ratna');
+                changeElementText('footer-about-description', 'Tas Anyaman Mba Ratna berdedikasi untuk melestarikan kerajinan tenun tradisional sambil memberikan mata pencaharian yang berkelanjutan bagi pengrajin terampil. Setiap produk menceritakan kisah warisan budaya dan kerajinan yang luar biasa.');
+                changeElementText('footer-quick-links-title', 'Tautan Cepat');
+                changeElementText('footer-link-home', 'Beranda');
+                changeElementText('footer-link-catalogs', 'Katalog');
+                changeElementText('footer-link-gallery', 'Galeri');
+                changeElementText('footer-link-testimonials', 'Testimoni');
+                changeElementText('footer-link-blog', 'Blog');
+                changeElementText('footer-link-contact', 'Kontak');
+                changeElementText('footer-customer-service-title', 'Layanan Pelanggan');
+                changeElementText('footer-link-shipping', 'Pengiriman & Pengembalian');
+                changeElementText('footer-link-faq', 'FAQ');
+                changeElementText('footer-link-privacy', 'Kebijakan Privasi');
+                changeElementText('footer-link-terms', 'Syarat & Ketentuan');
+                changeElementText('footer-link-custom-orders', 'Pesanan Khusus');
+                changeElementText('footer-newsletter-title', 'Newsletter');
+                changeElementText('footer-newsletter-description', 'Berlangganan untuk menerima pembaruan tentang produk baru, penawaran khusus, dan cerita tenun.');
+                changeElementText('footer-rights', '© 2025 Tas Anyaman Mba Ratna. Semua Hak Dilindungi.');
+                
+            } else {
+                // Switch to English
+                currentFlag.src = 'images/flag-en.png'; // Change to English flag
+                currentFlag.setAttribute('data-lang', 'en');
+                
+                // Change text to English - Bagian Navigasi dan Hero
+                changeElementText('site-title', 'Tas Anyaman Mba Ratna');
+                changeElementText('nav-home', 'Home');
+                changeElementText('nav-catalogs', 'Catalogs');
+                changeElementText('nav-gallery', 'Gallery');
+                changeElementText('nav-testimonials', 'Testimonials');
+                changeElementText('nav-blog', 'Blog');
+                changeElementText('nav-contact', 'Contact');
+                changeElementText('nav-shop', 'Shop Now');
+                changeElementText('hero-title', 'Traditional Handwoven Crafts');
+                changeElementText('hero-description', 'Mba Ratna woven bag craft offers the best quality and attractive craft bags to all customers. Search and find the bag of your choice!');
+                changeElementText('hero-button', 'Explore Our Collection');
+                
+                // About Section
+                changeElementText('about-title', 'Our Story');
+                changeElementText('about-subtitle', 'Preserving Handcraft Traditions');
+                changeElementText('about-paragraph-1', 'Tas Anyaman Mba Ratna was founded in 2020 by Dwi Ratnasari. With a mission to preserve and promote traditional simple weaving techniques that have been passed down from generation to generation.');
+                changeElementText('about-paragraph-2', 'The woven bags produced are carefully made using traditional weaving methods. This can preserve traditional skills passed down and will continue to develop in the modern world. Working directly with local craftsmen as a sustainable livelihood by providing decent wages as a form of appreciation for the extraordinary artistic talents of the craftsmen.');
+                changeElementText('about-paragraph-3', 'Our commitment to quality, authenticity, and sustainability enables these woven bag MSMEs to generate trust and customer satisfaction. Currently buying our woven bag catalogs, you are not only buying traditional goods from beautiful hands but also supporting the preservation of sustainable traditional culture and handicrafts.');
+                changeElementText('about-button', 'Learn More About Us');
+
+                // Catalogs Section
+                changeElementText('catalogs-title', 'Our Catalog');
+                changeElementText('catalogs-1-title', 'Traditional Woven Basket');
+                changeElementText('catalogs-1-description', 'Durable and stylish, made from sustainable materials');
+                changeElementText('catalogs-1-price', '$45.00');
+                changeElementText('catalogs-1-button', 'Add to Cart');
+                changeElementText('catalogs-2-title', 'Decorative Wall Hanging');
+                changeElementText('catalogs-2-description', 'Intricate design woven with cotton and jute fibers');
+                changeElementText('catalogs-2-price', '$65.00');
+                changeElementText('catalogs-2-button', 'Add to Cart');
+                changeElementText('catalogs-3-title', 'Handwoven Tote Bag');
+                changeElementText('catalogs-3-description', 'Durable and stylish, made from sustainable materials');
+                changeElementText('catalogs-3-price', '$38.00');
+                changeElementText('catalogs-3-button', 'Add to Cart');
+                changeElementText('catalogs-4-title', 'Woven Table Runner');
+                changeElementText('catalogs-4-description', 'Beautiful table decoration with traditional patterns');
+                changeElementText('catalogs-4-price', '$52.00');
+                changeElementText('catalogs-4-button', 'Add to Cart');
+                changeElementText('view-all-catalogs-button', 'View All Products');
+
+                // Blog Section
+                changeElementText('blog-title', 'How To Care for a Hand-Woven Bag: 4 Essential Tips');
+                changeElementText('step-1-title', 'Clean with a Cloth, Never Wash');
+                changeElementText('step-1-description', 'Avoid washing woven bags directly with water. Instead, use a slightly dampened cloth to wipe away dirt. For stubborn stains, gently scrub with a soft-bristled toothbrush to preserve the bags surface and pattern.');
+                changeElementText('step-2-title', 'Remove Odors with Baking Soda');
+                changeElementText('step-2-description', 'For bags that develop an unpleasant smell after storage, place baking soda inside the bag and leave it for 24 hours. This natural deodorizer eliminates odors without damaging the material, unlike perfumes which can deteriorate the fibers.');
+                changeElementText('step-3-title', 'Protect from Water Exposure');
+                changeElementText('step-3-description', 'Water is the enemy of woven materials as it can cause mold growth. If your bag gets wet, immediately dry it by wiping thoroughly with a clean cloth, then store it in a dry place to prevent damage to both appearance and structure.');
+                changeElementText('step-4-title', 'Perform Regular Maintenance');
+                changeElementText('step-4-description', 'Check your woven bag routinely for signs of damage or dirt accumulation. Early detection allows for prompt repair and cleaning, significantly extending your bags lifespan and preserving its aesthetic appeal.');
+
+                // Gallery Section
+                changeElementText('gallery-title', 'Gallery');
+                changeElementText('gallery-item-1', 'Weaving Process');
+                changeElementText('gallery-item-2', 'Artisan at Work');
+                changeElementText('gallery-item-3', 'Finished Products');
+                changeElementText('gallery-item-4', 'Material Preparation');
+                changeElementText('gallery-item-5', 'Our Workshop');
+                changeElementText('gallery-item-6', 'Product Display');
+
+                // Testimonials Section
+                changeElementText('testimonials-title', 'Customer Testimonials');
+                changeElementText('testimonials-text-1', 'The quality of the handwoven basket I ordered exceeded my expectations. The craftsmanship is exquisite, and it\'s obvious that each piece is made with care and attention to detail. I\'ll definitely be ordering more items from Tas Anyaman Mba Ratna!');
+                changeElementText('client-name-1', 'Emily Johnson');
+                changeElementText('client-role-1', 'Interior Designer');
+
+                // Contact Section
+                changeElementText('contact-title', 'Contact Us');
+                changeElementText('contact-get-in-touch', 'Get In Touch');
+                changeElementText('contact-address-title', 'Address');
+                changeElementHTML('contact-address', 'Front of KUD Sri Among Tani, No. 97<br>Brenggolo, Plosoklaten, Kediri Regency<br>East Java 64175');
+                changeElementText('contact-phone-title', 'Phone');
+                changeElementText('contact-phone', '(62) 856-0898-0005');
+                changeElementText('contact-tiktok-title', 'TikTok');
+                changeElementText('contact-tiktok', '@tas_anyaman mba ratna');
+                changeElementText('contact-instagram-title', 'Instagram');
+                changeElementText('contact-instagram', '@mba_ratnas_woven_bag');
+                changeElementText('contact-hours-title', 'Open Hours');
+                changeElementHTML('contact-hours', 'Monday - Friday: 9am - 5pm<br>Saturday: 10am - 4pm<br>Sunday: Closed');
+                changeElementText('contact-form-title', 'Send Us a Message');
+                changeElementText('label-name', 'Your Name');
+                changeElementText('label-email', 'Your Email');
+                changeElementText('label-subject', 'Subject');
+                changeElementText('label-message', 'Your Message');
+                changeElementText('btn-send-message', 'Send Message');
+
+                // Footer Section
+                changeElementText('footer-about-title', 'About Tas Anyaman Mba Ratna');
+                changeElementText('footer-about-description', 'Tas Anyaman Mba Ratna is dedicated to preserving traditional weaving craftsmanship while providing sustainable livelihoods for skilled artisans. Each product tells a story of cultural heritage and exceptional craftsmanship.');
+                changeElementText('footer-quick-links-title', 'Quick Links');
+                changeElementText('footer-link-home', 'Home');
+                changeElementText('footer-link-catalogs', 'Catalog');
+                changeElementText('footer-link-gallery', 'Gallery');
+                changeElementText('footer-link-testimonials', 'Testimonials');
+                changeElementText('footer-link-blog', 'Blog');
+                changeElementText('footer-link-contact', 'Contact');
+                changeElementText('footer-customer-service-title', 'Customer Service');
+                changeElementText('footer-link-shipping', 'Shipping & Returns');
+                changeElementText('footer-link-faq', 'FAQ');
+                changeElementText('footer-link-privacy', 'Privacy Policy');
+                changeElementText('footer-link-terms', 'Terms & Conditions');
+                changeElementText('footer-link-custom-orders', 'Custom Orders');
+                changeElementText('footer-newsletter-title', 'Newsletter');
+                changeElementText('footer-newsletter-description', 'Subscribe to receive updates on new products, special offers, and weaving stories');
+                changeElementText('footer-rights', '© 2025 Tas Anyaman Mba Ratna. All Rights Reserved.');
+            }
+        });
     } else {
-        // Switch to English
-        currentFlag.src = 'images/flag-en.png'; // Change to English flag
-        currentFlag.setAttribute('data-lang', 'en');
-        
-        // Change text to English
-        document.getElementById('site-title').innerText = 'Tas Anyaman Mba Ratna';
-        document.getElementById('nav-home').innerText = 'Home';
-        document.getElementById('nav-catalogs').innerText = 'Catalogs';
-        document.getElementById('nav-gallery').innerText = 'Gallery';
-        document.getElementById('nav-testimonials').innerText = 'Testimonials';
-        document.getElementById('nav-blog').innerText = 'Blog';
-        document.getElementById('nav-contact').innerText = 'Contact';
-        document.getElementById('nav-shop').innerText = 'Shop Now';
-        document.getElementById('hero-title').innerText = 'Traditional Handwoven Crafts';
-        document.getElementById('hero-description').innerText = 'Mba Ratna woven bag craft offers the best quality and attractive craft bags to all customers. Search and find the bag of your choice!';
-        document.getElementById('hero-button').innerText = 'Explore Our Collection';
-        document.getElementById('about-title').innerText = 'Our Story';
-        document.getElementById('about-subtitle').innerText = 'Preserving Handcraft Traditions';
-        document.getElementById('about-paragraph-1').innerText = 'Tas Anyaman Mba Ratna was founded in 2020 by Dwi Ratnasari. With a mission to preserve and promote traditional simple weaving techniques that have been passed down from generation to generation.';
-        document.getElementById('about-paragraph-2').innerText = 'The woven bags produced are carefully made using traditional weaving methods. This can preserve traditional skills passed down and will continue to develop in the modern world. Working directly with local craftsmen as a sustainable livelihood by providing decent wages as a form of appreciation for the extraordinary artistic talents of the craftsmen.';
-        document.getElementById('about-paragraph-3').innerText = 'Our commitment to quality, authenticity, and sustainability enables these woven bag MSMEs to generate trust and customer satisfaction. Currently buying our woven bag catalogs, you are not only buying traditional goods from beautiful hands but also supporting the preservation of sustainable traditional culture and handicrafts.';
-        document.getElementById('about-button').innerText = 'Learn More About Us';
-
-        // Catalogs Section
-        document.getElementById('catalogs-title').innerText = 'Our Catalog';
-        document.getElementById('catalogs-1-title').innerText = 'Traditional Woven Basket';
-        document.getElementById('catalogs-1-description').innerText = 'Durable and stylish, made from sustainable materials';
-        document.getElementById('catalogs-1-price').innerText = '$45.00';
-        document.getElementById('catalogs-1-button').innerText = 'Add to Cart';
-        document.getElementById('catalogs-2-title').innerText = 'Decorative Wall Hanging';
-        document.getElementById('catalogs-2-description').innerText = 'Intricate design woven with cotton and jute fibers';
-        document.getElementById('catalogs-2-price').innerText = '$65.00';
-        document.getElementById('catalogs-2-button').innerText = 'Add to Cart';
-        document.getElementById('catalogs-3-title').innerText = 'Handwoven Tote Bag';
-        document.getElementById('catalogs-3-description').innerText = 'Durable and stylish, made from sustainable materials';
-        document.getElementById('catalogs-3-price').innerText = '$38.00';
-        document.getElementById('catalogs-3-button').innerText = 'Add to Cart';
-        document.getElementById('catalogs-4-title').innerText = 'Woven Table Runner';
-        document.getElementById('catalogs-4-description').innerText = 'Beautiful table decoration with traditional patterns';
-        document.getElementById('catalogs-4-price').innerText = '$52.00';
-        document.getElementById('catalogs-4-button').innerText = 'Add to Cart';
-        document.getElementById('view-all-catalogs-button').innerText = 'View All catalogs';
-
-        // Blog Section
-        document.getElementById('blog-title').innerText = 'How To Care for a Hand-Woven Bag: 4 Essential Tips';
-        document.getElementById('step-1-title').innerText = 'Clean with a Cloth, Never Wash';
-        document.getElementById('step-1-description').innerText = 'Avoid washing woven bags directly with water. Instead, use a slightly dampened cloth to wipe away dirt. For stubborn stains, gently scrub with a soft-bristled toothbrush to preserve the bags surface and pattern.';
-        document.getElementById('step-2-title').innerText = 'Remove Odors with Baking Soda';
-        document.getElementById('step-2-description').innerText = 'For bags that develop an unpleasant smell after storage, place baking soda inside the bag and leave it for 24 hours. This natural deodorizer eliminates odors without damaging the material, unlike perfumes which can deteriorate the fibers.';
-        document.getElementById('step-3-title').innerText = 'Protect from Water Exposure';
-        document.getElementById('step-3-description').innerText = 'Water is the enemy of woven materials as it can cause mold growth. If your bag gets wet, immediately dry it by wiping thoroughly with a clean cloth, then store it in a dry place to prevent damage to both appearance and structure.';
-        document.getElementById('step-4-title').innerText = 'Perform Regular Maintenance';
-        document.getElementById('step-4-description').innerText = 'Check your woven bag routinely for signs of damage or dirt accumulation. Early detection allows for prompt repair and cleaning, significantly extending your bags lifespan and preserving its aesthetic appeal.';
-
-        // Gallery Section
-        document.getElementById('gallery-title').innerText = 'Gallery';
-        document.getElementById('gallery-item-1').innerText = 'Weaving blog';
-        document.getElementById('gallery-item-2').innerText = 'Artisan at Work';
-        document.getElementById('gallery-item-3').innerText = 'Finished catalogs';
-        document.getElementById('gallery-item-4').innerText = 'Material Preparation';
-        document.getElementById('gallery-item-5').innerText = 'Our Workshop'
-        document.getElementById('gallery-item-6').innerText = 'catalogs Display'
-
-        // Testimonials Section
-        document.getElementById('testimonials-title').innerText = 'Customer Testimonials';
-        document.getElementById('testimonials-text-1').innerText = 'The quality of the handwoven basket I ordered exceeded my expectations. The craftsmanship is exquisite, and it\'s obvious that each piece is made with care and attention to detail. I\'ll definitely be ordering more items from Tas Anyaman Mba Ratna!';
-        document.getElementById('client-name-1').innerText = 'Emily Johnson';
-        document.getElementById('client-role-1').innerText = 'Interior Designer';
-
-        // Contact Section
-        document.getElementById('contact-title').innerText = 'Contact Us';
-        document.getElementById('contact-get-in-touch').innerText = 'Get In Touch';
-        document.getElementById('contact-address-title').innerText = 'Address';
-        document.getElementById('contact-address').innerHTML = 'Front of KUD Sri Among Tani, No. 97<br>Brenggolo, Plosoklaten, Kediri Regency<br>East Java 64175';
-        document.getElementById('contact-phone-title').innerText = 'Phone';
-        document.getElementById('contact-phone').innerText = '(62) 856-0898-0005';
-        document.getElementById('contact-tiktok-title').innerText = 'TikTok';
-        document.getElementById('contact-tiktok').innerText = '@tas_anyaman mba ratna';
-        document.getElementById('contact-instagram-title').innerText = 'TikTok';
-        document.getElementById('contact-instagram').innerText = '@mba_ratnas_woven_bag';
-        document.getElementById('contact-hours-title').innerText = 'Open Hours';
-        document.getElementById('contact-hours').innerHTML = 'Monday - Friday: 9am - 5pm<br>Saturday: 10am - 4pm<br>Sunday: Closed';
-        document.getElementById('contact-form-title').innerText = 'Send Us a Message';
-        document.getElementById('label-name').innerText = 'Your Name';
-        document.getElementById('label-email').innerText = 'Your Email';
-        document.getElementById('label-subject').innerText = 'Subject';
-        document.getElementById('label-message').innerText = 'Your Message';
-        document.getElementById('btn-send-message').innerText = 'Send Message';
-
-        // Footer Section
-        document.getElementById('footer-about-title').innerText = 'About Tas Anyaman Mba Ratna';
-        document.getElementById('footer-about-description').innerText = 'Tas Anyaman Mba Ratna berdedikasi untuk melestarikan kerajinan tenun tradisional sambil memberikan mata pencaharian yang berkelanjutan bagi pengrajin terampil. Setiap produk menceritakan kisah warisan budaya dan kerajinan yang luar biasa.';
-        document.getElementById('footer-quick-links-title').innerText = 'Quick Links';
-        document.getElementById('footer-link-home').innerText = 'Home';
-        document.getElementById('footer-link-about').innerText = 'About Us';
-        document.getElementById('footer-link-catalogs').innerText = 'Catalog';
-        document.getElementById('footer-link-blog').innerText = 'Blogs';
-        document.getElementById('footer-link-gallery').innerText = 'Gallery';
-        document.getElementById('footer-link-contact').innerText = 'Contact';
-        document.getElementById('footer-customer-service-title').innerText = 'Customer Service';
-        document.getElementById('footer-link-shipping').innerText = 'Shipping & Returns';
-        document.getElementById('footer-link-faq').innerText = 'FAQ';
-        document.getElementById('footer-link-privacy').innerText = 'Privacy Policy';
-        document.getElementById('footer-link-terms').innerText = 'Terms & Conditions';
-        document.getElementById('footer-link-custom-orders').innerText = 'Custom Orders';
-        document.getElementById('footer-newsletter-title').innerText = 'Newsletter';
-        document.getElementById('footer-newsletter-description').innerText = 'Subscribe to receive updates on new catalogs, special offers, and weaving stories';
-        document.getElementById('footer-rights').innerText = '© 2025 Tas Anyaman Mba Ratna. All Rights Reserved.';
+        console.error('Language selector element not found');
+    }
+    
+    // Helper function untuk mengubah teks elemen dengan pengecekan
+    function changeElementText(id, text) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.innerText = text;
+        } else {
+            console.warn(`Element with ID "${id}" not found: ${id}`);
+        }
+    }
+    
+    // Helper function untuk mengubah HTML elemen dengan pengecekan
+    function changeElementHTML(id, html) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.innerHTML = html;
+        } else {
+            console.warn(`Element with ID "${id}" not found: ${id}`);
+        }
     }
 });
 </script>
