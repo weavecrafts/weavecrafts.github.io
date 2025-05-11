@@ -220,8 +220,8 @@
             margin-bottom: 15px;
         }
         
-        /* catalogss Section */
-        .catalogss {
+        /* catalogs Section */
+        .catalogs {
             padding: 80px 0;
             background-color: #fff9f0;
         }
@@ -728,19 +728,15 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
+         <div class="hero-content">
             <h2 id="hero-title">Traditional Handwoven Crafts</h2>
             <p id="hero-description">Tas Anyaman Mba' Ratna offers the best quality and attractive craft bags to all customers. Search and find the bag of your choice!</p>
-            <a href="#catalogss" class="btn" id="hero-button">Explore Catalogs</a>
+            <a href="#catalogs" class="btn" id="hero-button">Explore Catalogs</a>
         </div>
-    </section>     
-
-    <!-- About Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="home-title">About Us</h2>
-            </div>
-            <div class="home-content">
+        <div class="section-title">
+            <h2 id="hero-title">About Us</h2>
+        </div>
+        <div class="home-content">
                 <div class="home-img">
                     <img src="images/Logo.png" alt="Artisans working on traditional weaving">
                 </div>
@@ -748,12 +744,12 @@
                     <h3 id="about-subtitle">Preserving Handcraft Traditions</h3>
                     <p id="about-paragraph-1">Tas Anyaman Mba’ Ratna was founded in 2020 by Dwi Ratnasari. The mission is to preserve and promote traditional, simple weaving techniques that have been passed down from generation to generation.</p>
                     <p id="about-paragraph-2">The woven bags produced are carefully made using traditional weaving methods. This can preserve traditional skills passed down and will continue to develop in the modern world. Working directly with local craftsmen as a sustainable livelihood by providing decent wages as a form of appreciation for the extraordinary artistic talents of the craftsmen.</p>
-                    <p id="about-paragraph-3">Our commitment to quality, authenticity, and sustainability enables these woven bag MSMEs to generate trust and customer satisfaction. Currently buying our woven bag catalogss, you are not only buying traditional goods from beautiful hands but also supporting the preservation of sustainable traditional culture and handicrafts.</p>
+                    <p id="about-paragraph-3">Our commitment to quality, authenticity, and sustainability enables these woven bag MSMEs to generate trust and customer satisfaction. Currently buying our woven bag catalogs, you are not only buying traditional goods from beautiful hands but also supporting the preservation of sustainable traditional culture and handicrafts.</p>
                 </div>
             </div>
         </div>
-    </section>
-
+    </section>     
+    
     <!-- Catalogs Section -->
     <section class="catalogs" id="catalogs">
         <div class="catalogs">
@@ -807,7 +803,7 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="#" class="btn" id="view-all-catalogss-button">View All catalogss</a>
+                <a href="#" class="btn" id="view-all-catalogs-button">View All catalogs</a>
             </div>
         </div>
     </section>
@@ -859,8 +855,8 @@
                     <div class="gallery-overlay" id="gallery-item-2">Artisan at Work</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/blog 3.png" alt="Finished catalogss">
-                    <div class="gallery-overlay" id="gallery-item-3">Finished catalogss</div>
+                    <img src="images/blog 3.png" alt="Finished catalogs">
+                    <div class="gallery-overlay" id="gallery-item-3">Finished catalogs</div>
                 </div>
                 <div class="gallery-item">
                     <img src="images/blog 4.png" alt="Material Preparation">
@@ -1020,7 +1016,7 @@
                 </div>
                 <div class="footer-column">
                     <h3 id="footer-newsletter-title">Newsletter</h3>
-                    <p id="footer-newsletter-description">Subscribe to receive updates on new catalogss, special offers, and weaving stories.</p>
+                    <p id="footer-newsletter-description">Subscribe to receive updates on new catalogs, special offers, and weaving stories.</p>
                     <form>
                         <div class="form-group">
                             <input type="email" placeholder="Your Email Address" required>
@@ -1069,8 +1065,8 @@
         document.getElementById('about-paragraph-3').innerText = 'Komitmen kami terhadap hasil yang berkualitas, autentik, dan berkelanjutan membuat UMKM tas anyaman ini menghasilkan kepercayaan dan kepuasan pelanggan. Saat ini dengan membeli produk tas anyaman kami, Anda tidak hanya membeli barang tradisional dari tangan-tangan cantik tetapi juga mendukung pelestarian budaya dan kerajinan tradisional yang berkelanjutan.';
         document.getElementById('about-button').innerText = 'Pelajari Lebih Lanjut Tentang Kami';
 
-        // catalogss Section
-        document.getElementById('catalogss-title').innerText = 'Katalog';
+        // catalogs Section
+        document.getElementById('catalogs-title').innerText = 'Katalog';
         document.getElementById('catalogs-1-title').innerText = 'Keranjang Tenun Tradisional';
         document.getElementById('catalogs-1-description').innerText = 'Dibuat dengan tangan menggunakan rotan alami dan daun palma';
         document.getElementById('catalogs-1-price').innerText = 'Rp 675.000';
@@ -1087,7 +1083,7 @@
         document.getElementById('catalogs-4-description').innerText = 'Dekorasi meja yang indah dengan pola tradisional';
         document.getElementById('catalogs-4-price').innerText = 'Rp 780.000';
         document.getElementById('catalogs-4-button').innerText = 'Tambahkan ke Keranjang';
-        document.getElementById('view-all-catalogss-button').innerText = 'Lihat Semua Produk';
+        document.getElementById('view-all-catalogs-button').innerText = 'Lihat Semua Produk';
 
         // blog Section
         document.getElementById('blog-title').innerText = 'Cara Merawat Tas Tenun: 4 Tips Penting';
@@ -1175,11 +1171,11 @@
         document.getElementById('about-subtitle').innerText = 'Preserving Handcraft Traditions';
         document.getElementById('about-paragraph-1').innerText = 'Tas Anyaman Mba Ratna was founded in 2020 by Dwi Ratnasari. With a mission to preserve and promote traditional simple weaving techniques that have been passed down from generation to generation.';
         document.getElementById('about-paragraph-2').innerText = 'The woven bags produced are carefully made using traditional weaving methods. This can preserve traditional skills passed down and will continue to develop in the modern world. Working directly with local craftsmen as a sustainable livelihood by providing decent wages as a form of appreciation for the extraordinary artistic talents of the craftsmen.';
-        document.getElementById('about-paragraph-3').innerText = 'Our commitment to quality, authenticity, and sustainability enables these woven bag MSMEs to generate trust and customer satisfaction. Currently buying our woven bag catalogss, you are not only buying traditional goods from beautiful hands but also supporting the preservation of sustainable traditional culture and handicrafts.';
+        document.getElementById('about-paragraph-3').innerText = 'Our commitment to quality, authenticity, and sustainability enables these woven bag MSMEs to generate trust and customer satisfaction. Currently buying our woven bag catalogs, you are not only buying traditional goods from beautiful hands but also supporting the preservation of sustainable traditional culture and handicrafts.';
         document.getElementById('about-button').innerText = 'Learn More About Us';
 
-        // catalogss Section
-        document.getElementById('catalogss-title').innerText = 'Our Catalog';
+        // catalogs Section
+        document.getElementById('catalogs-title').innerText = 'Our Catalog';
         document.getElementById('catalogs-1-title').innerText = 'Traditional Woven Basket';
         document.getElementById('catalogs-1-description').innerText = 'Durable and stylish, made from sustainable materials';
         document.getElementById('catalogs-1-price').innerText = '$45.00';
@@ -1196,7 +1192,7 @@
         document.getElementById('catalogs-4-description').innerText = 'Beautiful table decoration with traditional patterns';
         document.getElementById('catalogs-4-price').innerText = '$52.00';
         document.getElementById('catalogs-4-button').innerText = 'Add to Cart';
-        document.getElementById('view-all-catalogss-button').innerText = 'View All catalogss';
+        document.getElementById('view-all-catalogs-button').innerText = 'View All catalogs';
 
         // blog Section
         document.getElementById('blog-title').innerText = 'How To Care for a Hand-Woven Bag: 4 Essential Tips';
@@ -1213,7 +1209,7 @@
         document.getElementById('gallery-title').innerText = 'Gallery';
         document.getElementById('gallery-item-1').innerText = 'Weaving blog';
         document.getElementById('gallery-item-2').innerText = 'Artisan at Work';
-        document.getElementById('gallery-item-3').innerText = 'Finished catalogss';
+        document.getElementById('gallery-item-3').innerText = 'Finished catalogs';
         document.getElementById('gallery-item-4').innerText = 'Material Preparation';
         document.getElementById('gallery-item-5').innerText = 'Our Workshop'
         document.getElementById('gallery-item-6').innerText = 'catalogs Display'
@@ -1250,7 +1246,7 @@
         document.getElementById('footer-quick-links-title').innerText = 'Quick Links';
         document.getElementById('footer-link-home').innerText = 'Home';
         document.getElementById('footer-link-about').innerText = 'About Us';
-        document.getElementById('footer-link-catalogss').innerText = 'Catalog';
+        document.getElementById('footer-link-catalogs').innerText = 'Catalog';
         document.getElementById('footer-link-blog').innerText = 'Blogs';
         document.getElementById('footer-link-gallery').innerText = 'Gallery';
         document.getElementById('footer-link-contact').innerText = 'Contact';
@@ -1261,25 +1257,25 @@
         document.getElementById('footer-link-terms').innerText = 'Terms & Conditions';
         document.getElementById('footer-link-custom-orders').innerText = 'Custom Orders';
         document.getElementById('footer-newsletter-title').innerText = 'Newsletter';
-        document.getElementById('footer-newsletter-description').innerText = 'Subscribe to receive updates on new catalogss, special offers, and weaving stories';
+        document.getElementById('footer-newsletter-description').innerText = 'Subscribe to receive updates on new catalogs, special offers, and weaving stories';
         document.getElementById('footer-rights').innerText = '© 2025 Tas Anyaman Mba Ratna. All Rights Reserved.';
     }
 });
 </script>
 </body>
 <script>
-    // Function to load catalogss from localStorage
-    function loadcatalogss() {
-        const storedcatalogss = localStorage.getItem('mbaRatnacatalogss');
-        if (storedcatalogss) {
-            const catalogss = JSON.parse(storedcatalogss);
+    // Function to load catalogs from localStorage
+    function loadcatalogs() {
+        const storedcatalogs = localStorage.getItem('mbaRatnacatalogs');
+        if (storedcatalogs) {
+            const catalogs = JSON.parse(storedcatalogs);
             const catalogsGrid = document.querySelector('.catalogs-grid');
             
             // Clear existing catalogs cards
             catalogsGrid.innerHTML = '';
             
-            // Add catalogss from storage
-            catalogss.forEach(catalogs => {
+            // Add catalogs from storage
+            catalogs.forEach(catalogs => {
                 const catalogsCard = document.createElement('div');
                 catalogsCard.className = 'catalogs-card';
                 catalogsCard.innerHTML = `
@@ -1298,8 +1294,8 @@
         }
     }
 
-    // Load catalogss when the page loads
-    window.addEventListener('DOMContentLoaded', loadcatalogss);
+    // Load catalogs when the page loads
+    window.addEventListener('DOMContentLoaded', loadcatalogs);
 </script>
 <script>
     // Function to load blog posts from localStorage
