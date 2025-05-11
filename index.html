@@ -127,92 +127,105 @@
         
         /* Hero Section */
         .hero {
-            padding: 80px 0 40px;
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.5),
-                rgba(0, 0, 0, 0.5)
-            ), url('images/Weaving.png') no-repeat center center/cover;
+            padding: 80px 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('images/Weaving.png') no-repeat center center/cover;
             color: white;
             text-align: center;
         }
-
-        /* Hero Content */
-.hero-content {
-    margin-bottom: 60px;
-}
-
-/* About Us Section di dalam .hero */
-.hero .section-title h2 {
-    font-size: 36px;
-    color: #fff;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 30px;
-}
-
-.hero .section-title h2::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 3px;
-    background-color: #fff;
-    bottom: -10px;
-    left: 25%;
-}
-
-/* About Content Style Inside Hero */
-.home-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    margin-top: 30px;
-    color: #fff;
-    text-align: left;
-}
-
-.home-img {
-    flex: 1 1 300px;
-    text-align: center;
-}
-
-.home-img img {
-    max-width: 250px;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.about-text {
-    flex: 2 1 400px;
-}
-
-.about-text h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #ffd9b3;
-}
-
-.about-text p {
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #f1f1f1;
-    line-height: 1.8;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .home-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-}
         
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        /* About Us Section */
+        .about-us {
+            padding: 80px 0;
+            background-color: #fff;
+            color: #3a3a3a;
+        }
+        
+        .about-us .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .about-us .section-title h2 {
+            font-size: 36px;
+            color: #976d3b;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-us .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: #976d3b;
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        /* Flex layout */
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .home-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .home-img img {
+            max-width: 250px;
+            width: 100%;
+            border-radius: 10px;
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #976d3b;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .home-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        
+            .about-text {
+                text-align: center;
+            }
+        }
+    
         .hero h2 {
             font-size: 48px;
             margin-bottom: 20px;
@@ -785,7 +798,7 @@
                     <li><a href="#home" id="nav-home">Home</a></li>
                     <li><a href="#catalogs" id="nav-catalogs">Catalogs</a></li>
                     <li><a href="#gallery" id="nav-gallery">Gallery</a></li>
-                    <li><a href="#testimonials" id="nav-testimonials">testimonials</a></li>
+                    <li><a href="#testimonials" id="nav-testimonials">Testimonials</a></li>
                     <li><a href="#blog" id="nav-blog">Blog</a></li>
                     <li><a href="#contact" id="nav-contact">Contact</a></li>
                     <li><a href="#shop" class="nav-btn" id="nav-shop">Shop Now</a></li>
@@ -806,18 +819,27 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+   <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-         <div class="hero-content">
-            <h2 id="hero-title">Traditional Handwoven Crafts</h2>
-            <p id="hero-description">Tas Anyaman Mba' Ratna offers the best quality and attractive craft bags to all customers. Search and find the bag of your choice!</p>
-            <a href="#catalogs" class="btn" id="hero-button">Explore Catalogs</a>
+            <div class="hero-content">
+                <h2 id="hero-title">Traditional Handwoven Crafts</h2>
+                <p id="hero-description">
+                    Tas Anyaman Mba' Ratna offers the best quality and attractive craft bags to all customers. 
+                    Search and find the bag of your choice!
+                </p>
+                <a href="#catalogs" class="btn" id="hero-button">Explore Catalogs</a>
+            </div>
         </div>
-        <div class="section-title">
-            <h2 id="hero-title">About Us</h2>
-        </div>
-        <div class="home-content">
+    </section>
+    
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="container">
+            <div class="section-title">
+                <h2 id="about-title">About Us</h2>
+            </div>
+            <div class="home-content">
                 <div class="home-img">
                     <img src="images/Logo.png" alt="Artisans working on traditional weaving">
                 </div>
@@ -829,7 +851,7 @@
                 </div>
             </div>
         </div>
-    </section>     
+    </section>
     
     <!-- Catalogs Section -->
     <section class="catalogs" id="catalogs">
